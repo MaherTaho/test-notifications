@@ -5,7 +5,7 @@ on:
 jobs:
   request:
     name: Request reviews on opened PRs
-    runs-on: eg-default
+    runs-on: ubuntu-latest
     steps:
         - name: Create PR review request
           env:
