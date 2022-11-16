@@ -9,7 +9,7 @@ jobs:
     steps:
         - name: Create PR review request
           env:
-            GITHUB_TOKEN: ${{ secrets.TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           run: |
             gh pr edit ${{ github.event.pull_request.html_url }} \
                 --add-reviewer hamzanael
