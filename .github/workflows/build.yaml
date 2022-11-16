@@ -1,16 +1,15 @@
-name: Assign a reviewer
+name: Notify users based on PR labels
 on:
   pull_request:
       types: [ labeled ]
 jobs:
   request:
     name: Request reviews on opened PRs
-    runs-on: ubuntu-latest
+    runs-on: eg-default
     steps:
-        - name: checkout repo
-          uses: actions/checkout@v2
         - name: Create PR review request
           env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.TOKEN }}
           run: |
-            echo "RUNNED"
+            gh pr edit ${{ github.event.pull_request.html_url }} \
+                --add-reviewer hamzanael
