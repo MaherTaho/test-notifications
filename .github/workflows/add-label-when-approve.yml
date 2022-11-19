@@ -8,7 +8,5 @@ jobs:
     if: github.event.review.state == 'approved'
     runs-on: ubuntu-latest
     steps:
-      - name: Show GitHub context   
-        env: 
-          GITHUB_CONTEXT: ${{ toJson(github) }}   
-        run: echo "$GITHUB_CONTEXT"
+      - name: Show GitHub context
+        run: echo ${{ github.actor }}
