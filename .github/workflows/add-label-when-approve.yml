@@ -5,10 +5,9 @@ on:
 
 jobs:
   approved:
-    if: github.event.review.state == 'approved' && (github.actor == 'elafelaf')
+    if: github.event.review.state == 'approved' && (github.actor == 'sdggfd' || github.actor == 'sdfsd' || github.actor == 'elafelaf')
     runs-on: ubuntu-latest
     steps:
-
       - name: Add-label
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
