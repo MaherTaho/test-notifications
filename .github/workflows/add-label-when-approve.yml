@@ -5,7 +5,7 @@ on:
 
 jobs:
   approved:
-    if: github.event.review.state == 'approved' && github.actor == 'elafelaf3'
+    if: github.event.review.state == 'approved' (&& github.actor == 'elafelaf')
     runs-on: ubuntu-latest
     steps:
 
