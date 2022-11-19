@@ -7,10 +7,18 @@ jobs:
   approved:
     runs-on: ubuntu-latest
     steps:
-      - name: Add-label
-        if: github.event.review.state == 'approved' && (github.actor == 'sdggfd' || github.actor == 'sdfsd' || github.actor == 'elafelaf')
+      - name: Add label for A 
+        if: github.event.review.state == 'approved' && (github.actor == 'sdggfd' || github.actor == 'sdfsd')
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh pr edit ${{ github.event.pull_request.html_url }} \
             --add-label approved
+      - name: Add label for B
+        if: github.event.review.state == 'approved' && (github.actor == 'sdggfd' || github.actor == 'sdfsd' || github.actor == 'elafelaf')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr edit ${{ github.event.pull_request.html_url }} \
+            --add-label bug
+        
