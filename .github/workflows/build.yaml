@@ -11,9 +11,13 @@ jobs:
       - name: Checkout the repo
         uses: actions/checkout@v2
 
-      - name: Clean and install
+      - name: install core
         run: |
-         npm install
+         npm i @actions/github
+
+      - name : install github
+        run: |
+          npm i @actions/core
 
       - name: Hello world action step
         id: hello
