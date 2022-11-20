@@ -13,7 +13,7 @@ jobs:
 
       - name: Clean and install
         run: |
-         npm ci
+         npm install
 
       - name: Hello world action step
         id: hello
