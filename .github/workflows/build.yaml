@@ -10,6 +10,6 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: mahertaho/check-all-reviewers@v1.2
+        uses: mahertaho/check-all-reviewers@v1.3
         with:
           who-to-greet: 'Mona the Octocat'
