@@ -11,14 +11,6 @@ jobs:
       - name: Checkout the repo
         uses: actions/checkout@v2
 
-      - name: install core
-        run: |
-         npm i @actions/github
-
-      - name : install github
-        run: |
-          npm i @actions/core
-
       - name: Hello world action step
         id: hello
         uses: mahertaho/check-all-reviewers@v1.1
